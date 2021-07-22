@@ -1,0 +1,375 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #666;
+    line-height: 2; /*espaçamento do texto entre uma linha e outra maior*/
+}
+
+a{
+    transition: color .2s linear, border .2s linear; /*isso quis dizer que todo a (link) vai ter essa transição quando passar o mouse por cima*/
+    text-decoration: none; /*todo a (link) não vai ter mais sublinhado*/
+    border-bottom: 1px dotted; /*isso fez um sublinhado fake, sendo que é uma linha em baixo com espessura de 1px e pontilhada*/
+    color: #49bf9d;
+}
+a:hover{
+    border-bottom-color: transparent; /*quando passa o mouse por cima do a (link) o soblinhado fake (uma linha bottom) some*/
+}
+
+p{
+    margin: 0 0 2em 0; /* 2EM significa que é relativa ao tamanho da fonte, sendo proporcional*/
+}
+
+img{
+    max-width: 100%; /*ajusta até o tamanho maximo da propria imagem*/
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #787878;
+    font-weight: normal;
+    margin: 1em 0; /* 1EM significa que é relativa ao tamanho da fonte, sendo proporcional*/
+}
+
+h1{
+    font-size: 30px;
+}
+
+h2{
+    font-size: 26px;
+}
+
+h3{
+    font-size: 22px;
+}
+
+h4{
+    font-size: 18px;
+}
+
+h5{
+    font-size: 16px;
+}
+
+h6{
+    font-size: 12px;
+}
+
+sub, sup{
+    font-size: 12px;
+}
+
+blockquote{
+    border-left: 5px solid #efefef;
+    margin: 2em 2em;
+    padding: .5em 0 .5em 1.5em;
+}
+
+blockquote p{
+    margin-bottom: 0;
+}
+
+code{
+    background: #f7f7f7;
+    border-radius: .35em;
+    border: 2px solid #efefef;
+    font-size: .9em;
+    padding: 0.25em 0.65em;
+    font-family: "courier new", monospace;
+    color: #929292;
+}
+
+pre code{
+    display: block;
+}
+
+ul, ol{
+    margin: 0;
+    padding: 0;
+    padding-left: 1.1em;
+}
+li{
+    padding-left: .5em;
+}
+
+.hidden{ /*garante que o texto não seja visivel na tela, mas que ele continue sendo lido para leitor de tela - acessibilidade para cegos -*/
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: block;
+}
+
+.ul-alternate{
+    list-style-type: none;
+    padding-left: 0; 
+}
+
+.ul-alternate li{
+    border-bottom: 2px solid rgb(187, 186, 186);
+    padding: 0px;
+    margin-right: 70px;
+}
+
+.ul-alternate li:last-child{ /*pega o ultimo filho do elemento li na classe alternate*/
+    border: 0;
+}
+
+.ul-icons{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ul-icons li{ 
+    display: inline-block; /*estáva um em cima do outro (comportamento de bloco), usa isso para ficar um do lado do outro (comportamento de linha)*/
+    font-size: 1.5em;
+    color: #49bf9d;
+}
+
+input, label, textarea, select{ /*formatação dos meus campos de formulário*/
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="radio"], input[type="checkbox"] { /*colchete usa para selecionar como um atributo*/
+    width: auto;
+}
+
+input, textarea, select{ /*formatação da minha caixa de texto do formulário, com o fundo, tamanho...*/
+    background: rgb(236, 236, 236);
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    margin-bottom: 15px;
+}
+input:focus, textarea:focus{ /*animação para quando vc estiver clicado na caixa de texto ela fica destacada*/
+    border: 2px solid #49bf9d;
+    outline: none; /*isso aqui vai tirar o padrão do browser que é azul, para ficar a animação na cor que eu coloquei*/
+}
+textarea{
+    height: 10em; /*aumentar o tamanho da altura da caixa de mensagem*/
+}
+
+.button-default{
+    background-color: #49bf9d;
+    border: 3px solid #49bf9d;
+    color: white;
+    padding: 1em 5em;
+    border-radius: 5px;
+    font-size: .8em;
+    display: inline-block;
+    width: auto;
+    transition: all .5s;
+    cursor: pointer; /*quando chega perto do butão muda o cursor para "mãozinha"*/
+}
+
+.button-default:hover{
+    background-color: #49e4b9;
+    border-color: transparent;
+}
+
+.button-default-stroke{
+    background-color: white;
+    border-color: #efefef;
+    color: inherit;
+}
+.button-default-stroke:hover{
+    color: #49bf9d;
+    border-color: #49bf9d;
+    background-color: white;
+}
+
+.button-default-small{
+    font-size: .65em;
+}
+
+.button-default-full{
+    width: 70%;
+    display: bock;
+    text-align: center;
+}
+
+.image-link{
+    border: 0;
+}
+
+.table{
+    width: 100%;
+    margin: 0 0 2em 0;
+    border-collapse: collapse; /*isso arrumou a mesma cor em uma linha inteira sem quebras entre colunas*/
+    text-align: left;
+}
+
+.table td{
+    padding: .75em;
+}
+
+.table th{
+    background: rgb(224, 223, 223);
+    padding: .75em;
+}
+
+.table tbody tr td{
+    border-bottom: 1px solid #ccc;
+}
+
+.table tbody tr:first-child td{ /*isso é para fazer apenas na parte de cima da tabela uma linha mais forte*/
+    border-top: 2px solid #666;
+}
+
+.table tbody tr:last-child td{ /*isso é para fazer apenas na parte de baixo da tabela uma linha mais forte*/
+    border-bottom: 2px solid #666;
+}
+
+.table tbody tr:nth-child(even) td{ /*isso vai pintar as linhas pares (EVEN) da lista, se fosse impar seria ODD */
+    background: #eee;
+}
+
+.table-alternate tbody td, .table-alternate tbody tr:first-child td, .table-alternate tbody tr:last-child td{
+    border: 1px solid #ddd;
+}
+
+.main-header{
+    position: fixed; /*isso é para deixar o header fixo do lado esquerdo da paguina, com o top 0 e left 0*/
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%; /*Largura em porcentagem que vai ficar esse header na tela*/
+    padding: 124px 54px 72px 54px; /*isso é a borda dentro do espaço do header*/
+    box-sizing: border-box; /*acrescentou isso pq somou a margin + padding ficando uma paguina longa horizontal, com isso encaixou melhor*/
+    background-image: url(../images/overlay.png), url(../images/bg.jpg); /*essa imagem overlay é uma pequena textura*/
+    background-position: left top;
+    background-size: auto, cover;
+    text-align: right;
+}
+
+.main-header-title{
+    font-size: 22px;
+    line-height: 1.5;
+    color: white;
+    font-weight: normal; /*isso é para tirar o negrito do h1*/
+    color: rgba(255,255,255, .6); /*isso é para deixar a letra um pouco transparente*/
+}
+.main-header-title strong{
+    color: white;
+    font-weight: normal;
+}
+.main-header-link{
+    color: inherit; /*isso significa que ele herdou a mesma cor do pai (main-header-title nesse caso), se mudar a cor do pai muda dele automaticamente*/
+}
+.main-header-link:hover{
+    color: #49bf9d;
+}
+
+
+.main-content{
+    width: 65%; /*Largura que o conteúdo vai ficar na tela, se o header é 35%, o conteudo fica 65% */
+    margin-left: 35%; /*e distanciando 35% da esquerda para poder ficar o conteudo fora do espaço do header*/
+    padding: 124px 54px 72px 54px; /*isso é a borda dentro do espaço do conteúdo*/
+    box-sizing: border-box; /*acrescentou isso pq somou a margin + padding ficando uma paguina longa horizontal, com isso encaixou melhor*/
+}
+
+.title-button{
+    margin-top: 22em;
+}
+
+.recent-works-card img{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery-img img{
+    width: 100%;
+}
+
+.gallery-thumb img, .gallery-img img{
+    margin-bottom: 2%;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.title-left-right{
+    margin-top: 30em;
+}
+
+.main-header-link img{ /*Vai fazer com que a imagem tenha a borda completamente em circulo*/
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/*col-1 e col-2 são a parte da lista que eu organizei em duas colunas por isso cada uma tem 50% de largura da paguina*/
+.col-1{
+    width: 48%;
+    float: left;
+}
+
+.col-1:first-child{
+    margin-right: 2%;
+}
+.col-1:last-child{
+    margin-left: 2%;
+}
+
+.col-2{
+    width: 48%;
+    float: right;
+}
+
+/*col-2-3 e col-1-3 são a parte do Get in Touch que dividi em 3 colunas*/
+.col-2-3{
+    width: 65%;
+    float: left;
+    margin-right: 2%;
+}
+
+.col-1-3{
+    width: 32%;
+    float: right;
+}
+
+/* .col-1-3:nth-child(2), .col-1-3:nth-child(5), .col-1-3:nth-child(8){ isso vai fazer pegar só as imagens do meio no 
+    caso a 2,5 e 8 e da o espaçamento delas de 2% nas laterais. 0 no topo e bottom e 2 laterais
+    margin: 0 2%; 
+}  */
+
+/*MAS USANDO MATÉMATICA SERIA 3N (MULTIPLO DE 3) - 1, MENOS 1, DANDO SEMPRE AS IMAGENS DO MEIO, NÃO INTERESSA QUANTAS SÃO*/
+
+.col-1-3:nth-child(3n - 1){
+    margin: 0 2%; 
+}
+
+.title-elements{
+    margin-top: 10em;
+}
+
+.img-left{
+    float: left;
+}
+
+.img-right{
+    float: right;
+}
+
+.main-footer{
+    position: fixed;
+    bottom: 0;
+    width: 35%;
+    left: 0;
+    padding: 0 54px 72px 0;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.ul-icons-footer{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ul-icons-footer li{ 
+    display: inline-block; /*estáva um em cima do outro (comportamento de bloco), usa isso para ficar um do lado do outro (comportamento de linha)*/
+    font-size: 1.5em;
+    font-size: 22px;
+    line-height: 1.5;
+    color: white;
+    color: rgba(255,255,255, .6);  
+}
+.ul-icons-footer:hover{
+    border-bottom-color: transparent;
+}
